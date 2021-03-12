@@ -6,7 +6,11 @@ import IUsersRepository from '../IUsersRepository';
 import { IListUsersResponse } from '@modules/users/interfaces';
 
 class FakeUserRepository implements IUsersRepository {
-  private users: IUser[] = [];
+  private users: IUser[];
+
+  constructor (initialData: IUser[] = []) {
+    this.users = initialData;
+  }
 
   public async create(data: ICreateUserDTO): Promise<IUser> {
     const user = new User();
