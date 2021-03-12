@@ -15,6 +15,9 @@ This is a Node.js project with some preconfigured libraries and design patterns 
 
   ```bash
     git clone https://github.com/augustomarcelo/nodejs-starter-project your-project-name
+
+    # Download dependencies
+    yarn
   ```
 
 ### 🔐 Generate pair keys
@@ -23,7 +26,7 @@ This is a Node.js project with some preconfigured libraries and design patterns 
 
   ```bash
     # Generate private key
-    ssh-keygen -t rsa -P "" -b 4096 -m PEM -f jwtRS256.key
+    ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
 
     # Generate public key
     ssh-keygen -e -m PEM -f jwtRS256.key > jwtRS256.key.pub
@@ -44,7 +47,9 @@ This is a Node.js project with some preconfigured libraries and design patterns 
   |---|---|
   | Run application | `yarn dev:server` |
   | Build | `yarn build` |
-  | Run tests | `yarn test` |
+  | Run tests and watch | `yarn test` |
+  | Run coverage tests | `yarn test:ci` |
+  | Run tests staged | `yarn test:staged` |
   | Create migrations | `yarn typeorm migration:create -n MigrationName` |
   | Run migrations | `yarn typeorm migration:run` |
   | Revert migrations | `yarn typeorm migration:revert` |
